@@ -1,18 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.ja160637.bendersonscorecard.MainActivity">
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingBottom="16dp"
+android:paddingLeft="16dp"
+android:paddingRight="16dp"
+android:paddingTop="16dp"
+tools:context="com.example.ja160637.bendersonscorecard.MainActivity"
+    android:background="@drawable/mainmenubackground">
 
     <TextView
+        android:id="@+id/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Benderson Scorecard"
+        android:textSize="46dp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorPrimaryDark"
+        />
+    <TextView
+        android:id="@+id/and"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="and"
+        android:layout_below="@id/Title"
+        android:layout_centerHorizontal="true"
+        android:textSize="46dp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:id="@+id/statTracker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stat Tracker"
+        android:textSize="46dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/and"
+        android:textColor="@color/colorPrimaryDark"/>
+    <Button
+        android:id="@+id/newRound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Round"
+        android:layout_below="@+id/statTracker"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="15dp"
+        android:padding="15dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccent"/>
+    <Button
+        android:id="@+id/pastRound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Past Rounds"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/newRound"
+        android:padding="15dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccent"
+        android:layout_margin="15dp"/>
+    <Button
+        android:id="@+id/viewStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/pastRound"
+        android:text="View Stats"
+        android:padding="15dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccent"
+        android:layout_margin="15dp"
+        />
 
-</android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>
