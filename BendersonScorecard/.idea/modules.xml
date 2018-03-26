@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BendersonScorecard.iml" filepath="$PROJECT_DIR$/BendersonScorecard.iml" />
+      <module fileurl="file://C:\SPRING2018\Android\Benderson\BendersonScorecard\BendersonScorecard.iml" filepath="C:\SPRING2018\Android\Benderson\BendersonScorecard\BendersonScorecard.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\SPRING2018\Android\Benderson\BendersonScorecard\app\app.iml" filepath="C:\SPRING2018\Android\Benderson\BendersonScorecard\app\app.iml" />
     </modules>
   </component>
 </project>
