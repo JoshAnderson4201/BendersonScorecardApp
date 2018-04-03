@@ -50,7 +50,8 @@ tools:context="com.example.ja160637.bendersonscorecard.MainActivity"
         android:layout_marginBottom="15dp"
         android:padding="15dp"
         android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/colorAccent"
+        android:onClick="newRound"/>
     <Button
         android:id="@+id/pastRound"
         android:layout_width="wrap_content"
