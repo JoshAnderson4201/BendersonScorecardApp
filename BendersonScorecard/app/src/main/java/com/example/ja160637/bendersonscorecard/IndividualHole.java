@@ -44,6 +44,19 @@ public class IndividualHole extends AppCompatActivity
             currentHole = 1;
             loadHoleStats(currentHole);
         }
+    }
 
+    public void prevHole(View v)
+    {
+        if(currentHole != 1)
+        {
+            currentHole--;
+            loadHoleStats(currentHole);
+        }
+        else
+        {
+            currentHole = 18;
+            loadHoleStats(currentHole);
+        }
     }
 }

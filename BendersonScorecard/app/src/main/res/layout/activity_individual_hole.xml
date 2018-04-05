@@ -31,11 +31,27 @@
         android:layout_below="@id/holePar"
         android:layout_marginTop="30dp"/>
 
-    <Button
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Next Hole"
-        android:layout_margin="30dp"
-        android:layout_below="@id/holeYardage"
-        android:onClick="nextHole"/>
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_below="@id/holeYardage">
+        <Button
+            android:id="@+id/prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Prev Hole"
+            android:onClick="prevHole"/>
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Next Hole"
+            android:layout_toRightOf="@id/prev"
+            android:onClick="nextHole"/>
+    </RelativeLayout>
 </RelativeLayout>
