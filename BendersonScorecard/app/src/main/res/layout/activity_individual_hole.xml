@@ -32,11 +32,42 @@
         android:layout_marginTop="30dp"/>
 
     <RelativeLayout
+        android:id="@+id/enter_scores"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_below="@id/holeYardage">
+        android:layout_below="@+id/holeYardage">
+
+        <TextView
+            android:id="@+id/score_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Score: "
+            />
+
+        <EditText
+            android:id="@+id/edit_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/score_label"
+            android:layout_margin="20dp"
+            />
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+
+        android:id="@+id/nextOrPrev"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_below="@id/enter_scores">
+
         <Button
             android:id="@+id/prev"
             android:layout_width="wrap_content"
@@ -52,6 +83,18 @@
             android:layout_margin="20dp"
             android:text="Next Hole"
             android:layout_toRightOf="@id/prev"
-            android:onClick="nextHole"/>
+            android:onClick="nextHole" />
+
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/goToScorecard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nextOrPrev"
+        android:layout_centerHorizontal="true"
+        android:text="Full Scorecard"
+        android:onClick="fullScorecard"
+        />
+
 </RelativeLayout>
