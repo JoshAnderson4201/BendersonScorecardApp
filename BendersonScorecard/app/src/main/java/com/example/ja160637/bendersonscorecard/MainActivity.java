@@ -15,6 +15,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public void loadHoleData()
+    {
+
+    }
+
     public void newRound(View v)
     {
         Intent launchNewRound = new Intent(this, IndividualHole.class);
