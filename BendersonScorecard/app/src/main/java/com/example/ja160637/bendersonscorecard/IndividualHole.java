@@ -14,9 +14,10 @@ public class IndividualHole extends AppCompatActivity
 {
     TextView holeNumber, holePar, holeYardage;
     DatabaseHandler db = new DatabaseHandler(this);
+    RoundSummary summary;
     EditText scoreView;
     int currentHole = 1;
-    String[] scoresArray = new String[18];
+    public static String[] scoresArray = new String[18];
     String score;
 
     @Override
@@ -64,6 +65,8 @@ public class IndividualHole extends AppCompatActivity
                 public void onClick(DialogInterface dialogInterface, int i)
                 {
                     db.insertRound(scoresArray);
+                    Intent launchSummary = new Intent(IndividualHole.this, RoundSummary.class);
+                    startActivity(launchSummary);
                 }
             });
             //If the round is not complete, they will be returned to hole #1
@@ -119,7 +122,4 @@ public class IndividualHole extends AppCompatActivity
         Intent scorecardIntent = new Intent(this, FullScorecard.class);
         startActivity(scorecardIntent);
     }
-
-
-
 }

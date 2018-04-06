@@ -16,10 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <activity android:name=".IndividualHole"></activity>
-
-    <activity android:name=".FullScorecard"></activity>
+        <activity android:name=".IndividualHole"/>
+        <activity android:name=".FullScorecard"/>
+        <activity android:name=".RoundSummary">
+        </activity>
     </application>
 
 </manifest>

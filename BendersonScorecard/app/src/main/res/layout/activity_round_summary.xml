@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ja160637.bendersonscorecard.RoundSummary">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Round Summary"
+        android:gravity="center"
+        android:textSize="50dp"/>
+
+    <TextView
+        android:id="@+id/birdTitle"
+        android:layout_below="@id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Birdies:"
+        android:layout_margin="20dp"
+        android:gravity="left"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/parTitle"
+        android:layout_below="@+id/birdTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pars:"
+        android:layout_margin="20dp"
+        android:gravity="left"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/bogeyTitle"
+        android:layout_below="@+id/parTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bogeys:"
+        android:layout_margin="20dp"
+        android:gravity="left"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/totalTitle"
+        android:layout_below="@+id/bogeyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Score:"
+        android:layout_margin="20dp"
+        android:gravity="left"
+        android:textSize="35dp"/>
+
+    <TextView
+        android:id="@+id/birdValue"
+        android:layout_below="@id/title"
+        android:layout_toRightOf="@+id/birdTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="left"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/parValue"
+        android:layout_below="@+id/birdTitle"
+        android:layout_toRightOf="@+id/birdTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="left"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/bogeyValue"
+        android:layout_below="@+id/parTitle"
+        android:layout_toRightOf="@+id/birdTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="left"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/totalValue"
+        android:layout_toRightOf="@+id/totalTitle"
+        android:layout_below="@+id/bogeyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_margin="20dp"
+        android:gravity="left"
+        android:textSize="35dp"/>
+
+</RelativeLayout>
