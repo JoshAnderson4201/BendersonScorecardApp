@@ -3,6 +3,7 @@ package com.example.ja160637.bendersonscorecard;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.GridLayout;
 import android.graphics.Point;
@@ -32,15 +33,17 @@ public class FullScorecard extends AppCompatActivity {
         gridLayout.setRowCount(14);
 
         // create the TextViews and add them to the GridLayout
+        GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+        params.setMargins(5, 5, 5, 5);
         views = new TextView[14][11];
         for (int row = 0; row < 14; row++) {
             for (int col = 0; col < 11; col++) {
                 views[row][col] = new TextView(this);
-                views[row][col].marg
+                views[row][col].setLayoutParams(params);
                 views[row][col].setTextSize((int)(width * .2));
                 views[row][col].setBackgroundColor(Color.parseColor("#ff0000"));
                 gridLayout.setPadding(50, 250, 50, 100);
-                gridLayout.addView(views[row][col],width, height);
+                gridLayout.addView(views[row][col], width,  height);
             }
         }
 

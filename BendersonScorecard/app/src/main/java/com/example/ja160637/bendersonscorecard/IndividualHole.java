@@ -1,6 +1,8 @@
 package com.example.ja160637.bendersonscorecard;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.util.Log;
 public class IndividualHole extends AppCompatActivity
 {
     TextView holeNumber, holePar, holeYardage;
+    DatabaseHandler db = new DatabaseHandler(this);
     EditText scoreView;
     int currentHole = 1;
     String[] scoresArray = new String[18];
@@ -51,8 +54,30 @@ public class IndividualHole extends AppCompatActivity
         else
         {
             saveScore(currentHole);
-            currentHole = 1;
-            loadHoleStats(currentHole);
+            // Alerts user once they've reach hole 18
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.setMessage("Are you finished with the current round?");
+            //If round is complete, hitting yes will insert the round into the DB
+            alert.setPositiveButton("Yes", new DialogInterface.OnClickListener()
+            {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i)
+                {
+                    db.insertRound(scoresArray);
+                }
+            });
+            //If the round is not complete, they will be returned to hole #1
+            alert.setNegativeButton("No", new DialogInterface.OnClickListener()
+            {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i)
+                {
+                    currentHole = 1;
+                    loadHoleStats(currentHole);
+                }
+            });
+            AlertDialog dialog = alert.create();
+            dialog.show();
         }
     }
 
@@ -94,4 +119,7 @@ public class IndividualHole extends AppCompatActivity
         Intent scorecardIntent = new Intent(this, FullScorecard.class);
         startActivity(scorecardIntent);
     }
+
+
+
 }

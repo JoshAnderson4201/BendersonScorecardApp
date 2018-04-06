@@ -9,15 +9,15 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private DatabaseHandler dbHandle;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-
-    public void loadHoleData()
+    protected void onCreate(Bundle savedInstanceState)
     {
-
+        super.onCreate(savedInstanceState);
+        dbHandle = new DatabaseHandler(this);
+        dbHandle.getWritableDatabase();
+        setContentView(R.layout.activity_main);
     }
 
     public void newRound(View v)
