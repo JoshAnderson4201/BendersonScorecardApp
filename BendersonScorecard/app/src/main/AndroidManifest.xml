@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".IndividualHole"/>
-        <activity android:name=".FullScorecard"/>
+        <activity android:name=".FullScorecard"
+            android:screenOrientation="landscape"/>
         <activity android:name=".RoundSummary">
         </activity>
     </application>
