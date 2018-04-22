@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".IndividualHole"/>
+        <activity android:name=".IndividualHole"
+                  android:screenOrientation="portrait"/>
         <activity android:name=".FullScorecard"
             android:screenOrientation="landscape"/>
         <activity android:name=".RoundSummary">

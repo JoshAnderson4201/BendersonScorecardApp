@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ja160637.bendersonscorecard.IndividualHole">
+    tools:context="com.example.ja160637.bendersonscorecard.IndividualHole"
+    android:orientation="vertical">
 
 
     <TextView
@@ -52,6 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/score_label"
+            android:inputType="number"
             android:layout_margin="20dp"
             />
 

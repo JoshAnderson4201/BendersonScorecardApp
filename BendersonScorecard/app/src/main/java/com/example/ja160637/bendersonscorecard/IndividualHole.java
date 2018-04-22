@@ -25,6 +25,11 @@ public class IndividualHole extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_individual_hole);
+
+        for(int i = 0; i < scoresArray.length; i++)
+        {
+            scoresArray[i] = "";
+        }
         loadHoleStats(currentHole);
     }
 
@@ -120,6 +125,7 @@ public class IndividualHole extends AppCompatActivity
 
     public void fullScorecard (View v) {
         Intent scorecardIntent = new Intent(this, FullScorecard.class);
+        scorecardIntent.putExtra("ScoreArray", scoresArray);
         startActivity(scorecardIntent);
     }
 }
