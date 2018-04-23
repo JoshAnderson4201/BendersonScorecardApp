@@ -9,94 +9,173 @@
     android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/holeNumber"
+    <Button
+        android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"/>
+        android:layout_below="@+id/yardLayout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/enterScores"
+        android:onClick="nextHole"
+        android:text="Next Hole"/>
 
-    <TextView
-        android:id="@+id/holePar"
+    <Button
+        android:id="@+id/prev"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/holeNumber"
-        android:layout_marginTop="30dp"/>
+        android:layout_below="@+id/yardLayout"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_toLeftOf="@+id/enterScores"
+        android:onClick="prevHole"
+        android:text="Prev Hole"/>
 
     <TextView
-        android:id="@+id/holeYardage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/holePar"
-        android:layout_marginTop="30dp"/>
-
-    <RelativeLayout
-        android:id="@+id/enter_scores"
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:layout_below="@+id/holeYardage">
+        android:background="@color/colorPrimary"
+        android:padding="20dp"
+        android:text="Individual Hole Scoring"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"/>
+
+    <RelativeLayout
+        android:id="@+id/holeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal">
 
         <TextView
-            android:id="@+id/score_label"
+            android:id="@+id/holeNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_margin="20dp"
-            android:text="Score: "
-            />
+            android:layout_toRightOf="@+id/holeNumberLabel"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/holeNumberLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:text="Hole:"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/parLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/holeLayout"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/holeParLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/holeNumber"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:text="Par:"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/holePar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/holeNumber"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:layout_toRightOf="@+id/holeParLabel"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/yardLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/parLayout"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/holeYardageLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/holePar"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:text="Yards:"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/holeYardage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/holePar"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:layout_toRightOf="@+id/holeYardageLabel"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/enterScores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/yardLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="5dp">
 
         <EditText
             android:id="@+id/edit_score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/score_label"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@android:color/white"
+            android:gravity="center_horizontal"
+            android:hint="Your Score"
             android:inputType="number"
-            android:layout_margin="20dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:textColorLink="@android:color/white"
+            android:textSize="20sp"
             />
 
     </RelativeLayout>
 
 
-
-    <RelativeLayout
-
-        android:id="@+id/nextOrPrev"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:layout_below="@id/enter_scores">
-
-        <Button
-            android:id="@+id/prev"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="Prev Hole"
-            android:onClick="prevHole"/>
-
-        <Button
-            android:id="@+id/next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="Next Hole"
-            android:layout_toRightOf="@id/prev"
-            android:onClick="nextHole" />
-
-    </RelativeLayout>
-
     <Button
         android:id="@+id/goToScorecard"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nextOrPrev"
+        android:layout_below="@+id/enterScores"
         android:layout_centerHorizontal="true"
-        android:text="Full Scorecard"
+        android:layout_marginTop="25dp"
         android:onClick="fullScorecard"
-        />
+        android:text="Full Scorecard"/>
+
+    <Button
+        android:id="@+id/saveRound"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/goToScorecard"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:onClick="fullScorecard"
+        android:text="Save Progress"/>
 
 </RelativeLayout>

@@ -23,9 +23,8 @@ public class PastRounds extends AppCompatActivity {
         for (int i = 0; i < IDarray.size(); i++) {
             Log.i("int value: ", Integer.toString(IDarray.get(i)));
         }
-        Log.i("test", "test2");
 
-        ArrayList<Integer> scoreArray = dbh.getScoresById(5);
+        ArrayList<Integer> scoreArray = dbh.getScoresById(1);
         for (int i = 0; i < scoreArray.size(); i++) {
             Log.i("scores for id 5: ", Integer.toString(scoreArray.get(i)) );
         }
