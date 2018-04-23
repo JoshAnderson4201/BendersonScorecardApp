@@ -1,9 +1,12 @@
 package com.example.ja160637.bendersonscorecard;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import java.util.ArrayList;
 
 /**
  * Created by retre on 4/5/2018.
@@ -54,4 +57,31 @@ public class DatabaseHandler extends SQLiteOpenHelper
         Log.i("Insert Query", sqlInsert);
         db.execSQL( sqlInsert );
     }
+
+    public ArrayList<Integer> getIds( ) {
+        String sqlQuery = "select * from rounds";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(sqlQuery, null);
+        ArrayList<Integer> ids = new ArrayList();
+        while(cursor.moveToNext()) {
+            ids.add(cursor.getInt(0));
+        }
+        db.close();
+        return ids;
+    }
+
+    public ArrayList<Integer> getScoresById(int id) {
+        String sqlQuery = "select * from rounds where id = " + id;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(sqlQuery, null);
+        ArrayList<Integer> scores = new ArrayList();
+        while (cursor.moveToNext()) {
+            for ( int i = 1; i < 19; i++ ) {
+                scores.add(cursor.getInt(i));
+            }
+        }
+        db.close();
+        return scores;
+    }
+
 }

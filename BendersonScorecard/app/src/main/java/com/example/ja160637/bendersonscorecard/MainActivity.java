@@ -25,4 +25,10 @@ public class MainActivity extends AppCompatActivity {
         Intent launchNewRound = new Intent(this, IndividualHole.class);
         startActivity(launchNewRound);
     }
+
+    public void pastRound( View v ) {
+        Intent launchPastRounds = new Intent (this, PastRounds.class);
+        startActivity(launchPastRounds);
+    }
+
 }
