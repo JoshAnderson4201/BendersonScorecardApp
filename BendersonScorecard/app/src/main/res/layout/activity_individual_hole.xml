@@ -175,7 +175,8 @@
         android:layout_below="@+id/goToScorecard"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
-        android:onClick="fullScorecard"
-        android:text="Save Progress"/>
+        android:onClick="saveRound"
+        android:text="Save Progress"
+        />
 
 </RelativeLayout>

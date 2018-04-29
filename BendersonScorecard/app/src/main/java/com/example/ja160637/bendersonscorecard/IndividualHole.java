@@ -14,8 +14,9 @@ public class IndividualHole extends AppCompatActivity
 {
     TextView holeNumber, holePar, holeYardage;
     DatabaseHandler db = new DatabaseHandler(this);
-    RoundSummary summary;
+    public int ID = -1;
     EditText scoreView;
+    boolean newRound;
     int currentHole = 1;
     public static String[] scoresArray = new String[18];
     String score;
@@ -25,12 +26,22 @@ public class IndividualHole extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_individual_hole);
-
-        for(int i = 0; i < scoresArray.length; i++)
+        Bundle extras = getIntent().getExtras();
+        if(extras != null)
         {
-            scoresArray[i] = "";
+            newRound = getIntent().getBooleanExtra("NewRound", false);
+            if(newRound)
+            {
+                for (int i = 0; i < scoresArray.length; i++)
+                {
+                    scoresArray[i] = "";
+                }
+                db.insertRound(scoresArray);
+                ID = db.getMostRecentID();
+                loadHoleStats(currentHole);
+                Log.i("Round ID", Integer.toString(ID));
+            }
         }
-        loadHoleStats(currentHole);
     }
 
     //Loads hole stats for current hole
@@ -123,9 +134,15 @@ public class IndividualHole extends AppCompatActivity
         scoreView.setText(getScore);
     }
 
+    public void saveRound(View v)
+    {
+        db.updateRoundByID(ID, scoresArray);
+    }
+
     public void fullScorecard (View v) {
         Intent scorecardIntent = new Intent(this, FullScorecard.class);
         scorecardIntent.putExtra("ScoreArray", scoresArray);
+        scorecardIntent.putExtra("RoundID", ID);
         startActivity(scorecardIntent);
     }
 }

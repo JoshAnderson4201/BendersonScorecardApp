@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public void newRound(View v)
     {
         Intent launchNewRound = new Intent(this, IndividualHole.class);
+        launchNewRound.putExtra("NewRound", true);
         startActivity(launchNewRound);
     }
 
