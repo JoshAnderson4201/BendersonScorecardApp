@@ -41,6 +41,16 @@ public class IndividualHole extends AppCompatActivity
                 loadHoleStats(currentHole);
                 Log.i("Round ID", Integer.toString(ID));
             }
+            else
+            {
+                String[] loadedArray = getIntent().getStringArrayExtra("ScoreArray");
+                for(int i = 1; i < loadedArray.length; i++)
+                {
+                    scoresArray[i-1] = loadedArray[i];
+                }
+                ID = getIntent().getIntExtra("RoundID", -1);
+                loadHoleStats(currentHole);
+            }
         }
     }
 
@@ -144,5 +154,12 @@ public class IndividualHole extends AppCompatActivity
         scorecardIntent.putExtra("ScoreArray", scoresArray);
         scorecardIntent.putExtra("RoundID", ID);
         startActivity(scorecardIntent);
+    }
+
+    public void mainMenu(View v)
+    {
+        Intent homeIntent = new Intent(this, MainActivity.class);
+        db.updateRoundByID(ID, scoresArray);
+        startActivity(homeIntent);
     }
 }

@@ -87,14 +87,14 @@ public class DatabaseHandler extends SQLiteOpenHelper
         return ids;
     }
 
-    public ArrayList<Integer> getScoresById(int id) {
+    public String[] getScoresById(int id) {
         String sqlQuery = "select * from rounds where id = " + id;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(sqlQuery, null);
-        ArrayList<Integer> scores = new ArrayList();
+        String[] scores = new String[19];
         while (cursor.moveToNext()) {
             for ( int i = 1; i < 19; i++ ) {
-                scores.add(cursor.getInt(i));
+                scores[i] = Integer.toString(cursor.getInt(i));
             }
         }
         db.close();
