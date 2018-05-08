@@ -24,12 +24,23 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/loadbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_marginBottom="30dp"
         android:layout_centerHorizontal="true"
+        android:layout_above="@+id/deletebutton"
         android:onClick="loadRound"
         android:text="Load Round"/>
+
+    <Button
+        android:id="@+id/deletebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="delete round"
+        android:layout_marginBottom="20dp"
+        android:onClick="deleteRound"/>
+
 </RelativeLayout>

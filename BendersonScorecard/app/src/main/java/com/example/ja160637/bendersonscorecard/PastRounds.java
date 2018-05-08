@@ -39,17 +39,32 @@ public class PastRounds extends AppCompatActivity {
     public void loadRound(View v)
     {
         int radioButtonId = roundList.getCheckedRadioButtonId();
-        View radioButton = roundList.findViewById(radioButtonId);
-        int index = roundList.indexOfChild(radioButton);
-        RadioButton r = (RadioButton) roundList.getChildAt(index);
-        String roundID = r.getText().toString();
-        db.getWritableDatabase();
-        String[] scoreArray = db.getScoresById(Integer.parseInt(roundID));
-        Intent launchOldRound = new Intent(this, IndividualHole.class);
-        launchOldRound.putExtra("NewRound", false);
-        launchOldRound.putExtra("RoundID", Integer.parseInt(roundID));
-        launchOldRound.putExtra("ScoreArray", scoreArray);
-        startActivity(launchOldRound);
+        if(radioButtonId != -1)
+        {
+            View radioButton = roundList.findViewById(radioButtonId);
+            int index = roundList.indexOfChild(radioButton);
+            RadioButton r = (RadioButton) roundList.getChildAt(index);
+            String roundID = r.getText().toString();
+            db.getWritableDatabase();
+            String[] scoreArray = db.getScoresById(Integer.parseInt(roundID));
+            Intent launchOldRound = new Intent(this, IndividualHole.class);
+            launchOldRound.putExtra("NewRound", false);
+            launchOldRound.putExtra("RoundID", Integer.parseInt(roundID));
+            launchOldRound.putExtra("ScoreArray", scoreArray);
+            startActivity(launchOldRound);
+        }
+    }
+
+    public void deleteRound(View v) {
+        int radioButtonId = roundList.getCheckedRadioButtonId();
+        if(radioButtonId != -1) {
+            View radioButton = roundList.findViewById(radioButtonId);
+            int index = roundList.indexOfChild(radioButton);
+            RadioButton r = (RadioButton) roundList.getChildAt(index);
+            String roundID = r.getText().toString();
+            db.getWritableDatabase();
+            db.deleteRoundByID(Integer.parseInt(roundID));
+        }
     }
 
 

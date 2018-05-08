@@ -1,7 +1,9 @@
 package com.example.ja160637.bendersonscorecard;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class RoundSummary extends AppCompatActivity
@@ -58,5 +60,11 @@ public class RoundSummary extends AppCompatActivity
                 stats[3] += Integer.parseInt(scoresArray[i]);
             }
         }
+    }
+
+    public void mainMenu(View v)
+    {
+        Intent homeIntent = new Intent(this, MainActivity.class);
+        startActivity(homeIntent);
     }
 }

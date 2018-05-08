@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:layout_toRightOf="@+id/holeNumberLabel"
             android:textSize="20sp"/>
 
@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:text="Hole:"
             android:textSize="20sp"/>
 
@@ -82,9 +82,8 @@
             android:id="@+id/holeParLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/holeNumber"
             android:layout_centerHorizontal="true"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:text="Par:"
             android:textSize="20sp"/>
 
@@ -92,9 +91,8 @@
             android:id="@+id/holePar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/holeNumber"
             android:layout_centerHorizontal="true"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:layout_toRightOf="@+id/holeParLabel"
             android:textSize="20sp"/>
     </RelativeLayout>
@@ -110,9 +108,8 @@
             android:id="@+id/holeYardageLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/holePar"
             android:layout_centerHorizontal="true"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:text="Yards:"
             android:textSize="20sp"/>
 
@@ -120,9 +117,8 @@
             android:id="@+id/holeYardage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/holePar"
             android:layout_centerHorizontal="true"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:layout_toRightOf="@+id/holeYardageLabel"
             android:textSize="20sp"/>
 
@@ -164,19 +160,31 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/enterScores"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
         android:onClick="fullScorecard"
         android:text="Full Scorecard"/>
+
+    <Button
+        android:id="@+id/viewRoundStats"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/goToScorecard"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:text="View round stats"
+        android:onClick="viewSummary"
+        />
 
     <Button
         android:id="@+id/saveRound"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/goToScorecard"
+        android:layout_below="@+id/viewRoundStats"
         android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
         android:onClick="saveRound"
-        android:text="Save Progress"
+        android:text="Save Round"
         />
 
     <Button
@@ -184,6 +192,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/saveRound"
+        android:layout_margin="5dp"
         android:layout_centerHorizontal="true"
         android:onClick="mainMenu"
         android:text="Main Menu"

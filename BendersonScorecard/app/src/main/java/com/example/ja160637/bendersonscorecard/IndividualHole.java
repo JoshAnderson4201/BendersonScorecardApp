@@ -36,7 +36,7 @@ public class IndividualHole extends AppCompatActivity
                 {
                     scoresArray[i] = "";
                 }
-                db.insertRound(scoresArray);
+                //db.insertRound(scoresArray);
                 ID = db.getMostRecentID();
                 loadHoleStats(currentHole);
                 Log.i("Round ID", Integer.toString(ID));
@@ -81,32 +81,8 @@ public class IndividualHole extends AppCompatActivity
         else
         {
             saveScore(currentHole);
-            // Alerts user once they've reach hole 18
-            AlertDialog.Builder alert = new AlertDialog.Builder(this);
-            alert.setMessage("Are you finished with the current round?");
-            //If round is complete, hitting yes will insert the round into the DB
-            alert.setPositiveButton("Yes", new DialogInterface.OnClickListener()
-            {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i)
-                {
-                    db.insertRound(scoresArray);
-                    Intent launchSummary = new Intent(IndividualHole.this, RoundSummary.class);
-                    startActivity(launchSummary);
-                }
-            });
-            //If the round is not complete, they will be returned to hole #1
-            alert.setNegativeButton("No", new DialogInterface.OnClickListener()
-            {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i)
-                {
-                    currentHole = 1;
-                    loadHoleStats(currentHole);
-                }
-            });
-            AlertDialog dialog = alert.create();
-            dialog.show();
+            currentHole = 1;
+            loadHoleStats(currentHole);
         }
     }
 
@@ -146,7 +122,9 @@ public class IndividualHole extends AppCompatActivity
 
     public void saveRound(View v)
     {
+        saveScore(currentHole); // added saveScore to update scoresArray before updating
         db.updateRoundByID(ID, scoresArray);
+        loadHoleStats(currentHole); // display the new score after updating
     }
 
     public void fullScorecard (View v) {
@@ -156,10 +134,15 @@ public class IndividualHole extends AppCompatActivity
         startActivity(scorecardIntent);
     }
 
+    public void viewSummary (View v) {
+        Intent summaryIntent = new Intent(this, RoundSummary.class);
+        startActivity(summaryIntent);
+    }
+
     public void mainMenu(View v)
     {
         Intent homeIntent = new Intent(this, MainActivity.class);
-        db.updateRoundByID(ID, scoresArray);
+        // this is where we should have a popup asking to save if you haven't
         startActivity(homeIntent);
     }
 }

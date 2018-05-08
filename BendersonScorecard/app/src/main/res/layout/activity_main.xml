@@ -46,6 +46,7 @@
         android:padding="15dp"
         android:layout_below="@+id/pastRound"
         android:src="@drawable/ic_viewstatsbutton"
+        android:onClick="viewStats"
         />
 
 

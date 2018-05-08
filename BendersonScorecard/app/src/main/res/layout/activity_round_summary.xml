@@ -96,4 +96,12 @@
         android:gravity="left"
         android:textSize="35dp"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/totalTitle"
+        android:text="Main Menu"
+        android:onClick="mainMenu"/>
+
 </RelativeLayout>

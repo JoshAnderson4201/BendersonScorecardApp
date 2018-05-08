@@ -22,6 +22,7 @@
         <activity android:name=".FullScorecard"
             android:screenOrientation="landscape"/>
         <activity android:name=".RoundSummary"/>
+        <activity android:name=".ViewStats"/>
     </application>
 
 </manifest>

@@ -13,7 +13,6 @@ import java.util.ArrayList;
  */
 
 
-
 public class DatabaseHandler extends SQLiteOpenHelper
 {
     public DatabaseHandler(Context context)
@@ -75,6 +74,12 @@ public class DatabaseHandler extends SQLiteOpenHelper
         db.execSQL( sqlUpdate );
     }
 
+    public void deleteRoundByID(int ID) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sqlDelete = "DELETE FROM rounds WHERE id = " + ID;
+        db.execSQL(sqlDelete);
+    }
+
     public ArrayList<Integer> getIds( ) {
         String sqlQuery = "select * from rounds";
         SQLiteDatabase db = this.getWritableDatabase();
@@ -106,8 +111,15 @@ public class DatabaseHandler extends SQLiteOpenHelper
         String sqlQuery = "select * from rounds where id=(select max(id) from rounds)";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(sqlQuery, null);
-        cursor.moveToNext();
-        return cursor.getInt(0);
+        if(cursor.getCount() > 0) {
+            cursor.moveToNext();
+            Log.i("Cursor", "" + cursor.getInt(0));
+            return cursor.getInt(0) + 1;
+        }
+        else
+        {
+            return 1;
+        }
     }
 
 }

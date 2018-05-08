@@ -32,4 +32,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(launchPastRounds);
     }
 
+    public void viewStats( View v ) {
+        Intent launchviewStats = new Intent (this, ViewStats.class);
+        startActivity(launchviewStats);
+    }
+
 }

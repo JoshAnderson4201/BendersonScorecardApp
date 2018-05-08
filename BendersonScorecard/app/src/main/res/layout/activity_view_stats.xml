@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ja160637.bendersonscorecard.ViewStats"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/view_stats_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="40sp"
+        android:padding="10dp"
+        android:text="MY AVERAGES"/>
+
+    <TextView
+        android:id="@+id/pars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/view_stats_title"
+        android:textSize="30sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp"
+        android:text="Pars:"/>
+
+    <TextView
+        android:id="@+id/pars_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/pars"
+        android:layout_alignBottom="@+id/pars"
+        android:layout_margin="20dp"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/birdies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pars"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:padding="20dp"
+        android:text="Birdies:"/>
+
+    <TextView
+        android:id="@+id/birdies_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pars_value"
+        android:layout_toRightOf="@+id/birdies"
+        android:layout_margin="20dp"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/bogeys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/birdies"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:padding="20dp"
+        android:text="Bogeys:"/>
+
+    <TextView
+        android:id="@+id/bogeys_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/birdies_value"
+        android:layout_toRightOf="@+id/bogeys"
+        android:layout_margin="20dp"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bogeys"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:padding="20dp"
+        android:text="Other:"/>
+
+    <TextView
+        android:id="@+id/other_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bogeys_value"
+        android:layout_toRightOf="@+id/other"
+        android:layout_margin="20dp"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/total_shots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/other"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:padding="20dp"
+        android:text="Total shots:"/>
+
+    <TextView
+        android:id="@+id/total_shots_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/other_value"
+        android:layout_toRightOf="@+id/total_shots"
+        android:layout_margin="20dp"
+        android:textSize="30sp"/>
+
+    <Button
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/total_shots"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:padding="20dp"
+        android:text="Main Menu"
+        android:onClick="ReturnMainMenu"/>
+
+
+</RelativeLayout>
